@@ -1,4 +1,15 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "context-react-example": "apps/context-react-example",
+    "context-react-example-e2e": "apps/context-react-example-e2e",
+    "data-access": "libs/data-access",
+    "mobx-example": "apps/mobx-example",
+    "mobx-example-e2e": "apps/mobx-example-e2e",
+    "redux-react-example": "apps/redux-react-example",
+    "redux-react-example-e2e": "apps/redux-react-example-e2e",
+    "shared": "libs/shared",
+    "zustand-react-example": "apps/zustand-react-example",
+    "zustand-react-example-e2e": "apps/zustand-react-example-e2e"
+  }
 }

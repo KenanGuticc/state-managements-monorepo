@@ -1,0 +1,74 @@
+{
+  "root": "apps/redux-react-example",
+  "sourceRoot": "apps/redux-react-example/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/redux-react-example",
+        "index": "apps/redux-react-example/src/index.html",
+        "baseHref": "/",
+        "main": "apps/redux-react-example/src/main.tsx",
+        "polyfills": "apps/redux-react-example/src/polyfills.ts",
+        "tsConfig": "apps/redux-react-example/tsconfig.app.json",
+        "assets": [
+          "apps/redux-react-example/src/favicon.ico",
+          "apps/redux-react-example/src/assets"
+        ],
+        "styles": ["apps/redux-react-example/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/redux-react-example/src/environments/environment.ts",
+              "with": "apps/redux-react-example/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "redux-react-example:build",
+        "hmr": true,
+        "port": 4200
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "redux-react-example:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/redux-react-example/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/redux-react-example"],
+      "options": {
+        "jestConfig": "apps/redux-react-example/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

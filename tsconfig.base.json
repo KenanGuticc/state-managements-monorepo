@@ -12,9 +12,13 @@
     "module": "esnext",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
+    "useDefineForClassFields": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@react-state-managements/data-access": ["libs/data-access/src/index.ts"],
+      "@react-state-managements/shared": ["libs/shared/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
